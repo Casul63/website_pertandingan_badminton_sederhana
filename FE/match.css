@@ -148,10 +148,10 @@ body {
   width: 90em;
   height: 90em;
   font-size: 10px;
-  position: absolute; /* Change this to absolute */
-  bottom: 0rem; /* Adjust the bottom value as needed */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
+  position: absolute; 
+  bottom: 0rem; 
+  left: 50%; 
+  transform: translateX(-50%); 
   display: flex;
   align-items: center;
   justify-content: center;

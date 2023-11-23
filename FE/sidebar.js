@@ -8,13 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.classList.toggle('active');
         sidebar.classList.toggle('hide');
 
-        // Check if the sidebar is visible
         const isSidebarVisible = !sidebar.classList.contains('hide');
 
-        // Update the styles of the navbar and content based on sidebar visibility
         if (isSidebarVisible) {
-            navbar.style.marginLeft = '260px'; // Adjust this value based on your sidebar width
-            content.style.marginLeft = '260px'; // Adjust this value based on your sidebar width
+            navbar.style.marginLeft = '260px'; 
+            content.style.marginLeft = '260px'; 
         } else {
             navbar.style.marginLeft = '0';
             content.style.marginLeft = '0';

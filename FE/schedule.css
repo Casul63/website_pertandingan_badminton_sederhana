@@ -202,8 +202,8 @@ a {
 }
 .container .square {
   position: absolute;
-  width: 1500px; /* Adjust the width of the squares */
-  height: 900px; /* Adjust the height of the squares */
+  width: 1500px; 
+  height: 900px; 
 }
 
 .container .square:nth-child(2) {

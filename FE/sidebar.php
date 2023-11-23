@@ -22,19 +22,19 @@
             <div class="main">
                 <div class="list-item">
                     <a href="index.php">
-                        <img src="img/sidebar/home.png" alt="" class="iconside">
+                        <img src="FE/img/sidebar/home.png" alt="" class="iconside">
                         <span class="descriptionside">Home</span>
                     </a>
                 </div>
                 <div class="list-item">
                     <a href="schedule.php">
-                        <img src="img/sidebar/schedule.png" alt="" class="iconside">
+                        <img src="FE/img/sidebar/schedule.png" alt="" class="iconside">
                         <span class="descriptionside">Schedule</span>
                     </a> 
                 </div>
                 <div class="list-item">
                     <a href="">
-                        <img src="img/sidebar/logout.png" alt="" class="iconside">
+                        <img src="FE/img/sidebar/logout.png" alt="" class="iconside">
                         <span class="descriptionside">Logout</span>
                     </a>
                 </div>
