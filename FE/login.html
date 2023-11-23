@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="signup_toggle">
+        <form class="form" action="index.php">
+            <div class="form_front">
+                <p class="title">Login</p>
+                <input placeholder="Username" class="username input" type="text">
+                <input placeholder="Password" class="password input" type="password">
+                <button class="btn" type="submit">Login</button>
+                <span class="switch">Don't have an account? 
+                    <label class="signup_tog" for="signup_toggle">
+                        Sign Up
+                    </label>
+                </span>
+    
+            </div>
+            <div class="form_back">
+                <p class="title">Sign Up</p>
+                <input placeholder="Username" class="username input" type="text">
+                <input placeholder="Password" class="password input" type="password">
+                <input placeholder="Confirm Password" class="confirm_password input" type="password">
+                <label for="role">Choose your role:</label>
+                <select id="role" name="role">
+                    <option value="Penonton">Penonton</option>
+                    <option value="Pemain">Pemain</option>
+                    <option value="Wasit">Wasit</option>
+                </select>
+                <button class="btn" type="submit">SignUp</button>
+                <span class="switch">Already have account? 
+                    <label class="signup_tog" for="signup_toggle">
+                        Sign In
+                    </label>
+                </span>    
+            </div>
+        </form>
+    </div>
+</body>
+</html>
