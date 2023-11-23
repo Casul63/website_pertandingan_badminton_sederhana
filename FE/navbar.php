@@ -18,7 +18,7 @@
                 </label>
             </div>
         </div>
-        <a href="index.php"><img src="img/sidebar/home.png" alt="" class="icon"></a>
+        <a href="index.php"><img src="FE/img/sidebar/home.png" alt="" class="icon"></a>
     </nav>
     <script src="sidebar.js"></script>
 </body>

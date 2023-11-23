@@ -22,7 +22,7 @@
                 <a href="login.html"><button class="btn">Get Started</button></a>
             </div>
             <div class="header__image">
-                <img src="img/content/home.png" alt="header">
+                <img src="FE/img/content/home.png" alt="header">
             </div>
         </header>
     </div>

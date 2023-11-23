@@ -25,7 +25,7 @@
         </div>
             <h2 class="section__header">MATCH 3</h2>
             <div class="join__image">
-                <img src="img/match/match3.jpg" alt="Join" class="gambar"/>
+                <img src="FE/img/match/match3.jpg" alt="Join" class="gambar"/>
                 <div class="join__grid">
                 <div class="join__card">
                     <div class="join__card__content">
