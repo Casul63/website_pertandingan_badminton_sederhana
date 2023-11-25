@@ -1,0 +1,85 @@
+html{
+    scroll-behavior: smooth;
+}
+.containerside {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, black, #212121);
+    width: 260px;
+    padding: 24px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    z-index: 2;
+    height: 100%;
+}
+
+.sidebar.hide {
+    transform: translateX(-100%);
+}
+
+.sidebar,
+.description-headerside {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 16px;
+    text-align: center;
+    color: #A1E533;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.iconside {
+    height: 20px;
+    filter: invert();
+}
+
+.sidebar .headerside .list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+}
+
+.sidebar .main .list-item .descriptionside {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 16px;
+    text-align: center;
+    color: #A1E533;
+}
+
+.sidebar .main .list-item .iconside {
+    margin-right: 12px;
+}
+
+.sidebar .main .list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+}
+
+.sidebar .main .list-item:hover {
+    background-color: #424242;
+    border: none;
+    border-radius: 0.5rem;
+}
+

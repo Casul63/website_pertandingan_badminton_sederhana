@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="signup_toggle">
+        <form method="POST" class="form" action="index.php" onKeyUp="validasi()">
+            <div class="form_front">
+                <p class="title">Login</p>
+                <input placeholder="Username" class="username input" type="text" required>
+                <input placeholder="Password" class="password input" type="password" required>
+                <button class="btn" type="submit">Login</button>
+                <span class="switch">Don't have an account? 
+                    <label class="signup_tog" for="signup_toggle">
+                        Sign Up
+                    </label>
+                </span>
+    
+            </div>
+            <div class="form_back">
+                <p class="title">Sign Up</p>
+                <input placeholder="Username" class="username input" type="text" id="username" required>
+                <input placeholder="Password" class="password input" type="password" id="password" required>
+                <input placeholder="Confirm Password" class="confirm_password input" type="password" id="confirm" required>
+                <label for="role">Choose your role:</label>
+                <select id="role" name="role" required>
+                    <option value="Penonton">Penonton</option>
+                    <option value="Pemain">Pemain</option>
+                    <option value="Wasit">Wasit</option>
+                </select>
+                <button class="btn" type="button" onclick="register()">SignUp</button>
+                <span class="switch">Already have an account? 
+                    <label class="signup_tog" for="signup_toggle">
+                        Sign In
+                    </label>
+                </span>    
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validasi() {
+            var validasiHuruf = /^[a-zA-Z]+$/;
+            var username = document.getElementById("username");
+            if (username.value.match(validasiHuruf)) {
+                return true;
+            } else {
+                alert("Can't Input Any Number or Character!");
+                username.value = username.value.replace(/[^a-zA-Z]/, '');
+                return false;
+            }
+        }
+
+        function register() {
+            var password = document.getElementById("password").value;
+            var confirm = document.getElementById("confirm").value;
+
+            if (password === confirm) {
+                alert("Registration Successful!"); 
+                document.getElementById("signup_toggle").checked = false;
+            } else {
+                alert("Password and Confirm Password must match!");
+            }
+        }
+    </script>
+</body>
+</html>
