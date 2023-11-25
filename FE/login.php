@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
     $result_wasit = mysqli_query($koneksi, $sql_wasit);
     $result_penonton = mysqli_query($koneksi, $sql_penonton);
 
-    var_dump($nama);
+    // var_dump($nama);
 
     while ($row = mysqli_fetch_assoc($result_admin)) {
         if ($row['nama_admin'] == $nama && $row['password'] == $password) {
@@ -135,8 +135,8 @@ if (isset($_POST['register'])) {
         <form class="form" action="" method="post">
             <div class="form_front">
                 <p class="title">Login</p>
-                <input placeholder="Username" class="username input" type="text" name="nama_login">
-                <input placeholder="Password" class="password input" type="password" name="password_login">
+                <input placeholder="Username" class="username input" type="text" name="nama_login" id="username_login">
+                <input placeholder="Password" class="password input" type="password" name="password_login" id="password">
                 <button class="btn" type="submit" name="login">Login</button>
                 <span class="switch">Don't have an account?
                     <label class="signup_tog" for="signup_toggle">
@@ -147,9 +147,9 @@ if (isset($_POST['register'])) {
             </div>
             <div class="form_back">
                 <p class="title">Sign Up</p>
-                <input placeholder="Username" class="username input" type="text" name="nama_register">
-                <input placeholder="Password" class="password input" type="password" name="password_register">
-                <input placeholder="Confirm Password" class="confirm_password input" type="password" name="confirm_password">
+                <input placeholder="Username" class="username input" type="text" name="nama_register" id="username_register">
+                <input placeholder="Password" class="password input" type="password" name="password_register" id="password">
+                <input placeholder="Confirm Password" class="confirm_password input" type="password" name="confirm_password" id="confirm">
                 <label for="role">Choose your role:</label>
                 <select id="role" name="role">
                     <option value="penonton" name='role'>Penonton</option>
@@ -157,7 +157,7 @@ if (isset($_POST['register'])) {
                     <option value="wasit" name='role'>Wasit</option>
                 </select>
                 <button class="btn" type="submit" name="register">Sign Up</button>
-                <span class="switch">Already have account?
+                <span class="switch">Already have an account?
                     <label class="signup_tog" for="signup_toggle">
                         Sign In
                     </label>
@@ -165,6 +165,28 @@ if (isset($_POST['register'])) {
             </div>
         </form>
     </div>
+
+    <script>
+        function validasi() {
+            var validasiHuruf = /^[a-zA-Z ]+$/;
+            var username_login = document.getElementById("username_login");
+            var username_register = document.getElementById("username_register");
+            if (username_login.value.match(validasiHuruf)) {
+                return true;
+            } else {
+                alert("Can't Input Any Number or Character!");
+                username_login.value = username_login.value.replace(/[^a-zA-Z ]/, '');
+                return false;
+            }
+            if (username_register.value.match(validasiHuruf)) {
+                return true;
+            } else {
+                alert("Can't Input Any Number or Character!");
+                username_register.value = username_register.value.replace(/[^a-zA-Z ]/, '');
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>

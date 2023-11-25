@@ -12,13 +12,13 @@ if ($_SESSION['role'] == 'admin') {
     ";
 }
 
-$sql = "SELECT pertandingan.id_pertandingan, pertandingan.nama_pertandingan, pertandingan.waktu_mulai, pertandingan.waktu_selesai, pemain1.nama_pemain AS nama_pemain_1, pemain2.nama_pemain AS nama_pemain_2, wasit.nama_wasit
+$sql = "SELECT pertandingan.id_pertandingan, pertandingan.nama_pertandingan, pertandingan.waktu_mulai, pertandingan.waktu_selesai, COALESCE(pemain1.nama_pemain, 'Kosong') AS nama_pemain_1, COALESCE(pemain2.nama_pemain, 'Kosong') AS nama_pemain_2, COALESCE(wasit.nama_wasit, 'Kosong') AS nama_wasit
         FROM pertandingan 
-        JOIN pemain_pertandingan ON pertandingan.id_pertandingan = pemain_pertandingan.id_pertandingan
-        JOIN pemain AS pemain1 ON pemain_pertandingan.id_pemain_1 = pemain1.id_pemain
-        JOIN pemain AS pemain2 ON pemain_pertandingan.id_pemain_2 = pemain2.id_pemain
-        JOIN wasit ON pertandingan.id_wasit = wasit.id_wasit
-        ;";
+        LEFT JOIN pemain_pertandingan ON pertandingan.id_pertandingan = pemain_pertandingan.id_pertandingan
+        LEFT JOIN pemain AS pemain1 ON pemain_pertandingan.id_pemain_1 = pemain1.id_pemain
+        LEFT JOIN pemain AS pemain2 ON pemain_pertandingan.id_pemain_2 = pemain2.id_pemain
+        LEFT JOIN wasit ON pertandingan.id_wasit = wasit.id_wasit
+        ORDER BY pertandingan.id_pertandingan ASC;";
 
 $result = mysqli_query($koneksi, $sql);
 ?>
