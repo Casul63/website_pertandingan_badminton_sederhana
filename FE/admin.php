@@ -21,6 +21,13 @@ $sql = "SELECT pertandingan.id_pertandingan, pertandingan.nama_pertandingan, per
         ORDER BY pertandingan.id_pertandingan ASC;";
 
 $result = mysqli_query($koneksi, $sql);
+
+$sql_pemain = "SELECT * FROM pemain;";
+$result_pemain = mysqli_query($koneksi, $sql_pemain);
+
+$sql_wasit = "SELECT * FROM wasit;";
+$result_wasit = mysqli_query($koneksi, $sql_wasit);
+
 ?>
 
 <!DOCTYPE html>
@@ -36,9 +43,11 @@ $result = mysqli_query($koneksi, $sql);
     <?php
     // echo "Admin"
     ?>
-    <div class="container">
+    <h2>README</h2>
+    <p>Ini adalah Halaman Admin. Hanya admin yang bisa mengakses ini. Di Sini Bisa CRUD Pertandingan</p>
+    <div class="container" style="display: block;">
         <div class="pertandingan">
-            <button><a href="create_pertandingan.php">Create Pertandingan</a></button>
+            <button><a href="pertandingan/create.php">Create Pertandingan</a></button>
             <br><br>
             <table border="1">
                 <tr>
@@ -65,8 +74,8 @@ $result = mysqli_query($koneksi, $sql);
                         </td>
                         <td>$row[nama_wasit]</td>
                         <td>
-                            <a href='edit_pertandingan.php?id=$row[id_pertandingan]'>Edit</a>
-                            <a href='delete_pertandingan.php?id=$row[id_pertandingan]'>Delete </a>
+                            <a href='pertandingan/edit.php?id=$row[id_pertandingan]'>Edit</a>
+                            <a href='pertandingan/delete.php?id=$row[id_pertandingan]'>Delete </a>
                         </td>
                     ";
                     $i++;
@@ -75,7 +84,69 @@ $result = mysqli_query($koneksi, $sql);
             </table>
 
         </div>
-        <div class="user">
+        <div class="user" style="margin-top: 30px;">
+            <button><a href="pemain/create.php">Create Pemain</a></button><br><br>
+            <table border="1">
+                <tr>
+                    <th>No</th>
+                    <th>Nama Pemain</th>
+                    <th>Password</th>
+                    <th>Action</th>
+                </tr>
+                <?php
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($result_pemain)) {
+                    echo "
+                    <tr>
+                        <td>$i</td>
+                        <td>$row[nama_pemain]</td>
+                        <td>";
+                    $kunci = "projek_responsi_";
+                    $decrypted_password = openssl_decrypt($row['password'], 'aes-256-cbc', $kunci, 0, $kunci);
+                    echo
+                    "$decrypted_password</td>
+                        <td>
+                            <a href='pemain/edit.php?id=$row[id_pemain]'>Edit</a>
+                            <a href='pemain/delete.php?id=$row[id_pemain]'>Delete </a>
+                        </td>
+                    </tr>
+                    ";
+                    $i++;
+                }
+                ?>
+            </table>
+        </div>
+        <div class="wasit" style="margin-top: 30px;">
+            <button><a href="wasit/create.php">Create Wasit</a></button><br><br>
+            <table border="1">
+                <tr>
+                    <th>No</th>
+                    <th>Nama Wasit</th>
+                    <th>Password</th>
+                    <th>Action</th>
+                </tr>
+                <?php
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($result_wasit)) {
+                    echo "
+                    <tr>
+                    <td>$i</td>
+                    <td>$row[nama_wasit]</td>
+                    <td>";
+                    $kunci = "projek_responsi_";
+                    $decrypted_password = openssl_decrypt($row['password'], 'aes-256-cbc', $kunci, 0, $kunci);
+                    echo
+                    "$decrypted_password</td>
+                        <td>
+                            <a href='wasit/edit.php?id=$row[id_wasit]'>Edit</a>
+                            <a href='wasit/delete.php?id=$row[id_wasit]'>Delete </a>
+                        </td>
+                    </tr>
+                    ";
+                    $i++;
+                }
+                ?>
+            </table>
         </div>
     </div>
 </body>

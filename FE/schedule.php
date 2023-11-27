@@ -50,7 +50,7 @@ $result = mysqli_query($koneksi, $sql);
                 </div>
             </div>
             <div class="explore__header">
-                <h1 class="section__header">MATCH SCHEDULE <?php echo "$_SESSION[role], $_SESSION[username]"; ?></h1>
+                <h1 class="section__header">MATCH SCHEDULE </h1>
                 <div class="explore__nav">
                     <span><i class="ri-arrow-left-line"></i></span>
                     <span><i class="ri-arrow-right-line"></i></span>
@@ -64,6 +64,11 @@ $result = mysqli_query($koneksi, $sql);
                 <div class='explore__card'>
                     <h4>MATCH $i</h4>
                     <table>
+                        <tr>
+                            <td>Nama Pertandingan</td>
+                            <td>:</td>
+                            <td>$row[nama_pertandingan]</td>
+                        </tr>
                         <tr>
                             <td>Nama Pemain 1</td>
                             <td>:</td>

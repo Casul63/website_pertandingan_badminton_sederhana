@@ -1,5 +1,5 @@
 <?php
-require_once 'koneksi.php';
+require_once '../koneksi.php';
 session_start();
 if ($_SESSION['role'] == 'admin') {
     echo "<h1>Panel Admin</h1>";
@@ -7,7 +7,7 @@ if ($_SESSION['role'] == 'admin') {
     echo "
         <script>
             alert('Bukan Admin!');
-            document.location = 'index.php';
+            document.location = '../index.php';
         </script>
     ";
 }

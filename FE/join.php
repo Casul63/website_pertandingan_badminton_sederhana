@@ -76,3 +76,11 @@ if ($_SESSION['role'] == 'penonton') {
         document.location = 'schedule.php';
     </script>";
 }
+
+if (!isset($_SESSION['role'])) {
+    echo "
+    <script>
+        alert('Silahkan Login Dahulu!');
+        document.location = 'login.php';
+    </script>";
+}

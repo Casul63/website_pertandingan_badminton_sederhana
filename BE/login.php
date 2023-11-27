@@ -1,6 +1,6 @@
 <?php
 require_once 'koneksi.php';
-session_start();
+
 
 if (isset($_POST['login'])) {
     $nama = $_POST['nama'];
