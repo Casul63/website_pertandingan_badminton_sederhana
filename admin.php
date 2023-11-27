@@ -44,7 +44,7 @@ $result_wasit = mysqli_query($koneksi, $sql_wasit);
     // echo "Admin"
     ?>
     <h2>README</h2>
-    <p>Ini adalah Halaman Admin. Hanya admin yang bisa mengakses ini. Di Sini Bisa CRUD Pertandingan</p>
+    <p>Ini adalah Halaman Admin. Hanya admin yang bisa mengakses ini. Di Sini Bisa CRUD Pertandingan, Pemain, dan Wasit</p>
     <div class="container" style="display: block;">
         <div class="pertandingan">
             <button><a href="pertandingan/create.php">Create Pertandingan</a></button>
